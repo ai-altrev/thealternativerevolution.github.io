@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alternative Revolution</title>
+    <meta name="description" content="Your voice matters. Your ideas can change everything. Join young people reimagining economics beyond profit.">
+    
+    <!-- Favicon using CSS star -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35' fill='%23dc2626'/></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #dc2626;
+        }
+
+        /* Header Section */
+        .header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+            padding: 20px;
+        }
+
+        .star-bg {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #dc2626;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            opacity: 0.05;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: #dc2626;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            margin-bottom: 30px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #dc2626;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .cta-button {
+            background: #dc2626;
+            color: #fff;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+
+        .link-card:hover {
+            border-color: #dc2626;
+            background: rgba(220, 38, 38, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .link-card h3 {
+            color: #dc2626;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .link-card p {
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(220, 38, 38, 0.2);
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .tagline { font-size: 18px; }
+            nav { padding: 15px 20px; }
+            nav ul { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="spore.html">Try It</a></li>
+            <li><a href="flow.html">See Ideas Flow</a></li>
+            <li><a href="about.html">For Supporters</a></li>
+        </ul>
+    </nav>
+
+    <section class="header" id="home">
+        <div class="star-bg"></div>
+        <div class="logo"></div>
+        <h1>The Alternative Revolution</h1>
+        <p class="tagline">Your voice matters. Your ideas can change everything.</p>
+        <a href="spore.html" class="cta-button">Start the Revolution</a>
+    </section>
+
+    <section class="quick-links">
+        <h2 style="font-size: 36px; margin-bottom: 20px;">Explore The Revolution</h2>
+        <div class="links-grid">
+            <a href="spore.html" class="link-card">
+                <h3>🌱 Try a Spore</h3>
+                <p>Have a conversation with AI about what bugs you about money and economics.</p>
+            </a>
+            <a href="flow.html" class="link-card">
+                <h3>✨ Watch Ideas Flow</h3>
+                <p>See how young people's insights connect and spread across the network.</p>
+            </a>
+            <a href="about.html" class="link-card">
+                <h3>📚 Learn More</h3>
+                <p>Discover the vision, mission, and how you can support young voices.</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>The Alternative Revolution - Empowering Young Voices Since 2024</p>
+        <p style="margin-top: 10px;">
+            <a href="https://github.com/thealternativerevolution" style="color: #dc2626;">Open Source</a> | 
+            <a href="mailto:hello@thealternativerevolution.com" style="color: #dc2626;">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>

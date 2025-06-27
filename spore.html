@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative Revolution Spore</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .spore-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .session-id {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        h1 {
+            color: #2a5298;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .question-prompt {
+            background: #f0f7ff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #e0e7ff;
+        }
+
+        .question-prompt h3 {
+            color: #2a5298;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border: 2px solid #e0e7ff;
+            border-radius: 8px;
+            font-size: 16px;
+            resize: vertical;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            flex: 1;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .explore-btn {
+            background: #2a5298;
+            color: white;
+        }
+
+        .explore-btn:hover {
+            background: #1e3c72;
+            transform: translateY(-2px);
+        }
+
+        .ai-response {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            display: none;
+        }
+
+        .ai-response.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <div class="spore-container">
+        <div class="session-id">Session: <span id="sessionName">River Voice</span></div>
+        
+        <h1>The Alternative Revolution</h1>
+        <p class="subtitle">What doesn't make sense about how money works?</p>
+        
+        <div class="question-prompt">
+            <h3>Share your thoughts:</h3>
+            <textarea id="userThought" placeholder="Type what bugs you about profit, money, or economics..."></textarea>
+        </div>
+        
+        <div class="button-group">
+            <button class="explore-btn" onclick="exploreWithAI()">
+                🤔 Explore with AI
+            </button>
+        </div>
+        
+        <div class="ai-response" id="aiResponse">
+            <h4>AI Exploration:</h4>
+            <p id="aiText">Your exploration will appear here...</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate poetic session names
+        const sessionNames = [
+            'River Voice', 'Mountain Echo', 'Forest Whisper', 'Ocean Dream',
+            'Sky Walker', 'Earth Singer', 'Fire Starter', 'Wind Dancer',
+            'Star Gazer', 'Moon Shadow', 'Sun Seeker', 'Cloud Drifter'
+        ];
+        
+        // Set random session name on load
+        window.onload = function() {
+            const randomName = sessionNames[Math.floor(Math.random() * sessionNames.length)];
+            document.getElementById('sessionName').textContent = randomName;
+        };
+        
+        function exploreWithAI() {
+            const thought = document.getElementById('userThought').value;
+            if (!thought.trim()) {
+                alert('Please share a thought or question first!');
+                return;
+            }
+            
+            // Simulate AI response
+            const aiResponse = document.getElementById('aiResponse');
+            const aiText = document.getElementById('aiText');
+            
+            aiResponse.classList.add('active');
+            aiText.innerHTML = '<em>This is a demo. In the full version, this would connect to an AI to explore your thoughts about economics and money.</em>';
+        }
+    </script>
+</body>
+</html>
